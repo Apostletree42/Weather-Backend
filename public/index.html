@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Angel</title>
+    </head>
+    <body>
+        <h1>Weather Angel</h1>
+        <form id="weather-box">
+            <label for="location">Enter location:</label>
+            <input type="text" id="location" name="location" required />
+            <button type="submit">Reveal it to me!</button>
+        </form>
+        <div id="weatherInfo"></div>
+
+        <script>
+            const weatherForm = document.getElementById('weather-box');
+            const weatherInfo = document.getElementById('weatherInfo');
+
+            function displayWeatherData(data) {
+                weatherInfo.innerHTML = `
+                    <h2>${data.location}</h2>
+                    <p>Temperature: ${data.temperature} °C</p>
+                    <p>Description: ${data.description}</p>
+                    <img src="http://openweathermap.org/img/w/${data.icon}.png" alt="${data.description}" />
+                `;
+            };
+
+            weatherForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const formData = new FormData(weatherForm);
+                const location = formData.get('location');
+                const response = await fetch(`/weather?location=${encodeURIComponent(location)}`);
+                const data = await response.json();
+                displayWeatherData(data);
+            });
+        </script>
+    </body>
+</html>
