@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Simple Weather App">
         <title>Weather Angel</title>
     </head>
     <body>
@@ -24,7 +27,7 @@
                     <img src="http://openweathermap.org/img/w/${data.icon}.png" alt="${data.description}" />
                 `;
             };
-
+            
             weatherForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
                 const formData = new FormData(weatherForm);

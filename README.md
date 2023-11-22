@@ -4,7 +4,7 @@
 A *simple* weather app built using just Express and Node. 
 
 ## How to use
----
+
 ### Pre-requisites:
     - A personal Open Weather API Key(acquired after signing up to Open Weather)
     - node(to check if you have it, run 'node -v')
@@ -22,7 +22,7 @@ A *simple* weather app built using just Express and Node.
 
 
 ## Project Structure
----
+
 ```
 project-root/
 |-- public/
@@ -34,11 +34,12 @@ project-root/
 |-- package.json
 |-- README.md
 ```
+## Contributions
+
+Since this is just a test for the main full stack weather app, further contributions are not expected(even styling)
 
 ## License
----
+
 This project is under the MIT Open License. Read the LICENSE file for more details.
 
-
----
 ---
